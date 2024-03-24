@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        GmarketSansMedium: ['GmarketSansMedium']
+      },
       colors: {
         primary: '#6969F5',
       },

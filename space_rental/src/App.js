@@ -1,12 +1,24 @@
-import './App.css';
+import tw from 'tailwind-styled-components';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import ListPage from './pages/List/ListPage';
+
+const Container = tw.div`
+  w-screen
+  h-screen
+  md:w-auto 
+  bg-primary
+`;
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-primary font-bold">
-        hi
-      </h1>
-    </div>
+    <>
+      <Container>
+        <Header />
+        <ListPage />
+        <Footer />
+      </Container >
+    </>
   );
 }
 
