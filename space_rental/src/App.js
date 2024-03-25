@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import tw from 'tailwind-styled-components';
-import HeaderLayout from './pages/HeaderLayout';
-import Login from './components/Login/Login';
-import SignUp from './components/Signup/SignUp';
+import Layout from './pages/Layout';
+import Login from './pages/Login/Login';
+import SignUp from './pages/Signup/SignUp';
 import MainPage from './pages/Main/MainPage';
 import GuestMyPage from './pages/Guest/GuestMyPage';
 import ListPage from './pages/List/ListPage';
 import DetailPage from './pages/Detail/DetailPage';
 
-const Container = tw.div`
+const LayoutContainer = tw.div`
   w-screen
   h-screen
   md:w-auto 
@@ -18,10 +18,9 @@ const Container = tw.div`
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HeaderLayout />,
+    element: <Layout />,
     children: [
       { index: true, element: <MainPage /> },
-
       { path: "list", element: <ListPage /> },
       { path: "detail", element: <DetailPage /> },
       { path: "guestMyPage", element: <GuestMyPage /> },
@@ -35,9 +34,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <Container>
+      <LayoutContainer>
         <RouterProvider router={router} />
-      </Container>
+      </LayoutContainer>
     </>
   );
 }
