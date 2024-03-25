@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import Logo from "../../assets/images/logo.png";
+import { FiLogIn } from "react-icons/fi";
 
 const HeaderContainer = tw.header`
   w-full
@@ -36,7 +37,7 @@ function Header() {
         </div>
         <div className="flex">
           <div>고객센터</div>
-          <div className="ml-2">LOGIN</div>
+          <FiLogIn />
         </div>
       </HeaderWrap>
     </HeaderContainer>
