@@ -1,5 +1,6 @@
-import React from 'react';
-import tw from 'tailwind-styled-components';
+import React from "react";
+import tw from "tailwind-styled-components";
+import Logo from "../../assets/images/logo.png";
 
 const HeaderContainer = tw.header`
   w-full
@@ -29,15 +30,17 @@ function Header() {
     <HeaderContainer>
       <HeaderWrap>
         <div>
-          <div className='logo'>공간대여로고</div>
+          <div className="logo">
+            <img src={Logo} alt="logo" className="w-24" />
+          </div>
         </div>
-        <div className='flex'>
+        <div className="flex">
           <div>고객센터</div>
-          <div className='ml-2'>LOGIN</div>
+          <div className="ml-2">LOGIN</div>
         </div>
       </HeaderWrap>
     </HeaderContainer>
   );
 }
 
-export default Header; 
+export default Header;
