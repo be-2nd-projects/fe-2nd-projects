@@ -1,7 +1,21 @@
-import React from 'react';
-import { DropDownWrap, Title, TitleWrap } from './ListPageStyle';
+import React, { useState } from 'react';
+import { DropDownButton, DropDownListWrap, DropDownWrap, Title, TitleWrap } from './ListPageStyle';
+import { TbTriangleFilled, TbTriangleInvertedFilled } from "react-icons/tb";
 
 function ListPage() {
+  const [isShow, setIsShow] = useState(false);
+  const [listItem, setListItem] = useState('좋아요순')
+
+  const dropDownClickHandler = () => {
+    setIsShow(!isShow);
+  }
+  const dropDownListClickHandler = (list) => {
+    setListItem(list);
+    setIsShow(false);
+  }
+
+  const dropDownListData = ['좋아요순', '가격높은순', '가격낮은순', '평점높은순', '평점낮은순'];
+
   return (
     <div className='wrap max-w-6xl mx-auto my-0'>
       <TitleWrap>
@@ -10,22 +24,31 @@ function ListPage() {
           공간을 제시할게요!
         </Title>
       </TitleWrap>
-      <div>
-        <DropDownWrap>
-          <button className='flex'>
-            좋아요 순
-            <div>▼</div>
-          </button>
 
-          <ul>
-            <li>가격높은순</li>
-            <li>가격낮은순</li>
-            <li>별점높은순</li>
-            <li>별점낮은순</li>
-          </ul>
-        </DropDownWrap>
-      </div>
-    </div>
+      {/* 드롭다운 */}
+      <DropDownWrap>
+        <DropDownButton onClick={dropDownClickHandler}>
+          <span className='mr-1'>
+            {listItem}
+          </span>
+          {isShow ? <TbTriangleFilled /> : <TbTriangleInvertedFilled />}
+        </DropDownButton>
+
+        {isShow &&
+          <DropDownListWrap>
+            {dropDownListData.map((list, index) =>
+              <li
+                className='p-2 text-sm'
+                key={index}
+                onClick={() => dropDownListClickHandler(list)}
+              >
+                {list}
+              </li>
+            )}
+          </DropDownListWrap>
+        }
+      </DropDownWrap>
+    </div >
   );
 }
 
