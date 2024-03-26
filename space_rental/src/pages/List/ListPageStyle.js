@@ -11,29 +11,3 @@ export const Title = tw.h1`
   font-bold
   animate-[wiggle_1s_ease-in-out_infinite]
 `;
-
-export const DropDownWrap = tw.div`
-  flex
-  flex-col
-  items-end
-  justify-end
-`;
-
-export const DropDownButton = tw.button`
-  flex
-  items-center
-  justify-center
-  w-32
-  bg-white
-  p-3
-  text-sm
-  rounded
-`;
-
-export const DropDownListWrap = tw.ul`
-  w-32
-  bg-white
-  mt-2
-  p-3
-  rounded
-`;
