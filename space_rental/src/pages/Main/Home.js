@@ -86,26 +86,23 @@ const Home = () => {
 
   return (
     <div
-      className={`page ${
-        showNextPage ? "show-next-page" : ""
-      } wrap max-w-6xl mx-auto my-0`}
+      className={`page ${showNextPage ? "show-next-page" : ""
+        } wrap max-w-6xl mx-auto my-0`}
     >
       {/* 현재 페이지 컨텐츠 (1P) */}
       <div
-        className={`current-page ${
-          showQuestionPage !== 0 ? "hidden" : ""
-        } wrap max-w-6xl mx-auto my-0 `}
+        className={`current-page ${showQuestionPage !== 0 ? "hidden" : ""
+          } wrap max-w-6xl mx-auto my-0 `}
       >
         <Home1 />
       </div>
 
       {/* 2P (첫번째 질문) */}
       <div
-        className={`next-page h-screen ${
-          showQuestionPage === 1
-            ? "animate__animated animate__fadeInRight visible-on-scroll"
-            : "hidden-initially"
-        } wrap max-w-6xl mx-auto my-0`}
+        className={`next-page h-screen ${showQuestionPage === 1
+          ? "animate__animated animate__fadeInRight visible-on-scroll"
+          : "hidden-initially"
+          } wrap max-w-6xl mx-auto my-0`}
       >
         <Home2
           firstSearchText={firstSearchText}
@@ -118,9 +115,8 @@ const Home = () => {
 
       {showQuestionPage === 2 && (
         <div
-          className={`next-page h-screen ${
-            showNextPage ? "animate__animated animate__fadeInRight" : ""
-          } wrap max-w-6xl mx-auto my-0`}
+          className={`next-page h-screen ${showNextPage ? "animate__animated animate__fadeInRight" : ""
+            } wrap max-w-6xl mx-auto my-0`}
         >
           <Home3
             toggleSearch={toggleSearch}
@@ -136,9 +132,8 @@ const Home = () => {
 
       {showQuestionPage === 3 && (
         <div
-          className={`next-page h-screen ${
-            showQuestionPage ? "animate__animated animate__fadeInRight" : ""
-          }`}
+          className={`next-page h-screen ${showQuestionPage ? "animate__animated animate__fadeInRight" : ""
+            }`}
         >
           <Home4
             CustomCalendar={CustomCalendar}
@@ -154,9 +149,8 @@ const Home = () => {
 
       {showQuestionPage === 4 && (
         <div
-          className={`next-page h-screen ${
-            showQuestionPage ? "animate__animated animate__fadeInRight" : ""
-          }`}
+          className={`next-page h-screen ${showQuestionPage ? "animate__animated animate__fadeInRight" : ""
+            }`}
         >
           <Home5
             SearchBar={SearchBar}

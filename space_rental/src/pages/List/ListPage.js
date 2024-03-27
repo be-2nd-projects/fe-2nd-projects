@@ -8,7 +8,7 @@ import Cards from './Cards/Cards';
 
 function ListPage() {
   return (
-    <div className='wrap max-w-6xl mx-auto my-0'>
+    <div className='wrap h-screen max-w-6xl mx-auto my-0'>
       <TitleWrap>
         <Title>
           당신에게 딱 맞는 <br />
