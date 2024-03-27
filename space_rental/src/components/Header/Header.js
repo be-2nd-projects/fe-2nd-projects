@@ -17,6 +17,7 @@ const HeaderContainer = tw.header`
   font-bold  
   sticky
   top-0
+  z-10
 `;
 
 const HeaderWrap = tw.div`

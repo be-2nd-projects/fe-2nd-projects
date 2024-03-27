@@ -5,6 +5,7 @@ export const DropdownWrap = tw.div`
   flex-col
   items-end
   justify-end
+  relative
 `;
 
 export const DropdownButton = tw.button`
@@ -16,6 +17,7 @@ export const DropdownButton = tw.button`
   p-3
   text-sm
   rounded
+  font-bold
 `;
 
 export const DropdownListWrap = tw.ul`
@@ -24,6 +26,8 @@ export const DropdownListWrap = tw.ul`
   mt-2
   p-3
   rounded
+  absolute
+  top-[44px]
 `;
 
 export const DropdownList = tw.li`
