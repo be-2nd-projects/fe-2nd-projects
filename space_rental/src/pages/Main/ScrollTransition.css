@@ -9,8 +9,6 @@ page {
 .next-page {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
   min-height: 100vh;
   height: 100%;
   transition: transform 0.5s ease-in-out;
@@ -29,14 +27,14 @@ page {
 }
 
 .searchBarBackground {
-  background-image: url("../assets/searchbar.png");
+  background-image: url("../../assets/images/searchbar.png");
   background-size: cover;
   width: 100%;
   height: auto;
   background-color: transparent;
   outline: none;
   color: black;
-  padding: 26px 0 26px 40px;
+  padding: 30px 40px;
 }
 
 .hidden-initially {

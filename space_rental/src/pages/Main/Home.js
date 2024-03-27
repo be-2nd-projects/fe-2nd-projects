@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "../assets/searchbar.png";
-import searchBarFold from "../assets/searchbar2.png";
-import searchBarUnfold from "../assets/searchbar3.png";
+import SearchBar from "../../assets/images/searchbar.png";
+import searchBarFold from "../../assets/images/searchbar2.png";
+import searchBarUnfold from "../../assets/images/searchbar3.png";
 import "./ScrollTransition.css"; // 스타일 파일
-import CustomCalendar from "../components/CustomCalendar";
-import dayjs from "dayjs"; // dayjs 임포트
+import CustomCalendar from "./MainComponents/CustomCalendar";
+import Home1 from "./Home1";
+import Home2 from "./Home2";
+import Home3 from "./Home3";
+import Home4 from "./Home4";
+import Home5 from "./Home5";
 
 const Home = () => {
   const [showNextPage, setShowNextPage] = useState(false);
@@ -14,7 +18,7 @@ const Home = () => {
   const [secondSearchText, setSecondSearchText] = useState("");
   const [isExpanded, setIsExpanded] = useState(false); // 검색창이 펼쳐진 상태인지 여부를 저장하는 상태
   const [dateSelected, setDateSelected] = useState(false);
-  const [currentPerson, setCurrentPerson] = useState(1);
+  const [currentNumberOfPeople, setCurrentNumberOfPeople] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,12 +47,12 @@ const Home = () => {
     }
   }, [dateSelected]);
 
-  const plusPeopleNumber = () => {
-    setCurrentPerson((prev) => prev + 1);
+  const plusNumberOfPeople = () => {
+    setCurrentNumberOfPeople((prev) => prev + 1);
   };
 
-  const minusPeopleNumber = () => {
-    setCurrentPerson((prev) => prev - 1);
+  const minusNumberOfPeople = () => {
+    setCurrentNumberOfPeople((prev) => prev - 1);
   };
   const handleFirstSearchInputChange = (event) => {
     console.log("Input changed:", event.target.value);
@@ -79,103 +83,56 @@ const Home = () => {
   };
 
   const [selectedDate, setSelectedDate] = useState(new Date());
+
   return (
-    <div className={`page ${showNextPage ? "show-next-page" : ""}`}>
-      {/* 현재 페이지 컨텐츠 */}
+    <div
+      className={`page ${
+        showNextPage ? "show-next-page" : ""
+      } wrap max-w-6xl mx-auto my-0`}
+    >
+      {/* 현재 페이지 컨텐츠 (1P) */}
       <div
-        className={`current-page h-screen ${
+        className={`current-page ${
           showQuestionPage !== 0 ? "hidden" : ""
-        }`}
+        } wrap max-w-6xl mx-auto my-0 `}
       >
-        <div className="bg-white h-20" />
-        <div className="pt-20 pb-12 pl-44 text-7xl font-bold text-white animate__animated animate__fadeInUp">
-          <div>원하는 공간을</div>
-          <div>원하는 시간만큼</div>
-          <div>손쉽게 예약하자</div>
-        </div>
+        <Home1 />
       </div>
 
+      {/* 2P (첫번째 질문) */}
       <div
         className={`next-page h-screen ${
           showQuestionPage === 1
             ? "animate__animated animate__fadeInRight visible-on-scroll"
             : "hidden-initially"
-        }`}
+        } wrap max-w-6xl mx-auto my-0`}
       >
-        <div className="pt-20 pb-12 px-44 text-7xl font-bold text-white">
-          <div>어디로 가실 건가요?</div>
-          <div className="flex items-center">
-            <input
-              type="text"
-              value={firstSearchText}
-              onChange={handleFirstSearchInputChange}
-              onKeyDown={handleFirstSearchInputKeyDown}
-              className="searchBarBackground"
-              placeholder="강남구"
-            />
-          </div>
-        </div>{" "}
+        <Home2
+          firstSearchText={firstSearchText}
+          onSearchTextChange={handleFirstSearchInputChange}
+          onSearchKeyDown={handleFirstSearchInputKeyDown}
+        />
       </div>
+
+      {/* 3P (두번째 질문) */}
 
       {showQuestionPage === 2 && (
         <div
           className={`next-page h-screen ${
             showNextPage ? "animate__animated animate__fadeInRight" : ""
-          }`}
+          } wrap max-w-6xl mx-auto my-0`}
         >
-          <div className="pt-20 px-44 text-7xl font-bold text-white">
-            <div className="text-6xl mb-2">어떤 용도로 사용하실 건가요?</div>
-
-            <button onClick={toggleSearch}>
-              <img
-                className="w-screen"
-                src={isExpanded ? searchBarUnfold : searchBarFold}
-                alt="Search"
-              />
-            </button>
-          </div>
-
-          {isExpanded && (
-            <div className="px-44 flex justify-center text-5xl text-black ">
-              <div className="w-screen mx-4 bg-white rounded-xl shadow-xl">
-                <div
-                  onClick={optionSelect}
-                  className="border-b-2 pt-4 pl-4 pb-1.5"
-                >
-                  미팅룸
-                </div>
-                <div
-                  onClick={optionSelect}
-                  className="border-b-2 pt-4 pl-4 pb-1.5"
-                >
-                  스터디룸
-                </div>
-                <div
-                  onClick={optionSelect}
-                  className="border-b-2 pt-4 pl-4 pb-1.5"
-                >
-                  파티룸
-                </div>
-                <div
-                  onClick={optionSelect}
-                  className="border-b-2 pt-4 pl-4 pb-1.5"
-                >
-                  스튜디오
-                </div>
-                <div
-                  onClick={optionSelect}
-                  className="border-b-2 pt-4 pl-4 pb-1.5"
-                >
-                  연습실
-                </div>
-                <div onClick={optionSelect} className="pt-4 pl-4 pb-1.5">
-                  갤러리
-                </div>
-              </div>
-            </div>
-          )}
+          <Home3
+            toggleSearch={toggleSearch}
+            isExpanded={isExpanded}
+            searchBarFold={searchBarFold}
+            searchBarUnfold={searchBarUnfold}
+            optionSelect={optionSelect}
+          />
         </div>
       )}
+
+      {/* 4P (세번째 질문) */}
 
       {showQuestionPage === 3 && (
         <div
@@ -183,30 +140,17 @@ const Home = () => {
             showQuestionPage ? "animate__animated animate__fadeInRight" : ""
           }`}
         >
-          <div className="pt-20 px-44 text-7xl font-bold text-white">
-            <div className="text-6xl mb-2">언제 가실 건가요?</div>
-          </div>
-          <div className="relative flex justify-center items-center mt-4">
-            <img src={SearchBar} alt="Calendar" className="w-screen px-44" />
-            <div className="flex absolute pb-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-5xl font-bold pb-3">
-              <div className="pt-3">
-                {dayjs(selectedDate).format("YYYY년 MM월 DD일")}
-              </div>
-            </div>
-            <div className="absolute right-0 mr-44 pr-14 mb-4 pt-1 flex items-center">
-              <div
-                onClick={handleDateOption}
-                className="rounded-lg px-2 text-white my-4 pt-1 bg-blue-400 text-2xl"
-              >
-                OK
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center ">
-            <CustomCalendar onDateChange={setSelectedDate} />
-          </div>
+          <Home4
+            CustomCalendar={CustomCalendar}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            handleDateOption={handleDateOption}
+            SearchBar={SearchBar}
+          />
         </div>
       )}
+
+      {/* 5P (네번째 질문) */}
 
       {showQuestionPage === 4 && (
         <div
@@ -214,29 +158,12 @@ const Home = () => {
             showQuestionPage ? "animate__animated animate__fadeInRight" : ""
           }`}
         >
-          <div className="pt-20 px-44 text-7xl font-bold text-white">
-            <div className="text-6xl mb-2">몇명이서 이용하나요?</div>
-          </div>
-          <div className="relative flex justify-center items-center mt-4">
-            <img src={SearchBar} alt="Calendar" className="w-screen px-44" />
-            <div className="absolute top-0 pb-3 flex items-center justify-center w-full h-full">
-              <div
-                className="text-white text-4xl mb-2 mr-4 bg-blue-400 w-10 h-10 pt-1.5 flex justify-center items-center rounded-full cursor-pointer"
-                onClick={minusPeopleNumber}
-              >
-                -
-              </div>
-              <div className="mx-4 w-36 text-center text-5xl text-black">
-                {currentPerson}명
-              </div>
-              <div
-                className="text-white text-4xl mb-2 ml-4 bg-blue-400 w-10 h-10 pt-1.5 flex justify-center items-center rounded-full cursor-pointer"
-                onClick={plusPeopleNumber}
-              >
-                +
-              </div>
-            </div>
-          </div>
+          <Home5
+            SearchBar={SearchBar}
+            plusNumberOfPeople={plusNumberOfPeople}
+            minusNumberOfPeople={minusNumberOfPeople}
+            currentNumberOfPeople={currentNumberOfPeople}
+          />
         </div>
       )}
     </div>
