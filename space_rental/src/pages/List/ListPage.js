@@ -15,9 +15,7 @@ function ListPage() {
           공간을 제시할게요!
         </Title>
       </TitleWrap>
-
       <Dropdown />
-
       <Cards />
     </div >
   );
