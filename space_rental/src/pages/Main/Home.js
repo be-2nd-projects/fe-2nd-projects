@@ -138,7 +138,7 @@ const Home = () => {
         <div
           className={`next-page h-screen ${
             showQuestionPage ? "animate__animated animate__fadeInRight" : ""
-          }`}
+          }  wrap max-w-6xl mx-auto my-0`}
         >
           <Home4
             CustomCalendar={CustomCalendar}
@@ -156,7 +156,7 @@ const Home = () => {
         <div
           className={`next-page h-screen ${
             showQuestionPage ? "animate__animated animate__fadeInRight" : ""
-          }`}
+          }  wrap max-w-6xl mx-auto my-0`}
         >
           <Home5
             SearchBar={SearchBar}

@@ -2,38 +2,38 @@ import React from "react";
 
 function PlaceResister() {
   return (
-    <div className="flex flex-col justify-center items-center text-5xl">
+    <div className=" wrap max-w-6xl mx-auto my-0 flex flex-col  text-5xl">
       <div className="mt-32 mb-16  text-7xl text-white font-bold">
         공간 등록하기
       </div>
       <div className="pb-24 w-full ">
-        <div className="mx-44 ">공간의 이름을 입력해 주세요</div>
-        <div className="mx-44">
+        <div className="font-light">공간의 이름을 입력해 주세요</div>
+        <div className="">
           <input type="text" className="rounded-[28px] w-full h-20" />
         </div>
       </div>
       <div className="pb-24 w-full ">
-        <div className="mx-44 ">공간의 위치를 알려 주세요</div>
-        <div className="mx-44">
+        <div className=" ">공간의 위치를 알려 주세요</div>
+        <div className="">
           <input type="text" className="rounded-[28px] w-full h-20 mb-3" />
           <input type="text" className="rounded-[28px] w-full h-20" />
         </div>
       </div>
       <div className="pb-24 w-full ">
-        <div className="mx-44 ">공간의 특징을 알려 주세요</div>
-        <div className="mx-44">
+        <div className=" ">공간의 특징을 알려 주세요</div>
+        <div className="">
           <input type="text" className="rounded-[28px] w-full h-60" />
         </div>
       </div>
       <div className="pb-24 w-full ">
-        <div className="mx-44 ">공간의 주의사항을 써 주세요</div>
-        <div className="mx-44">
+        <div className=" ">공간의 주의사항을 써 주세요</div>
+        <div className="">
           <input type="text" className="rounded-[28px] w-full h-60" />
         </div>
       </div>
       <div className="pb-24 w-full ">
-        <div className="mx-44 ">공간의 특별한 점을 선택해 주세요</div>
-        <div className="mx-44">
+        <div className=" ">공간의 특별한 점을 선택해 주세요</div>
+        <div className="">
           <div>
             <button className="text-xl bg-white rounded-lg pt-2 pb-1 px-1.5 leading-none mr-3 ">
               와이파이
@@ -71,25 +71,25 @@ function PlaceResister() {
           </div>
         </div>
       </div>
-      <div className="pb-24">
+      <div className="pb-24 w-full ">
         <div>공간의 대표 이미지를 올려 주세요</div>
         <div>
           <input type="text" />
         </div>
       </div>
-      <div className="pb-24">
+      <div className="pb-24 w-full ">
         <div>운영시간을 알려 주세요</div>
         <div>
           <input type="text" />
         </div>
       </div>{" "}
-      <div className="pb-24">
+      <div className="pb-24 w-full ">
         <div>시간대별 요금을 설정해 주세요</div>
         <div>
           <input type="text" />
         </div>
       </div>
-      <div className="pb-24">
+      <div className="pb-24 w-full ">
         <div>수용가능 인원을 알려 주세요</div>
         <div>
           <input type="text" />

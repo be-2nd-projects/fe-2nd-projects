@@ -8,6 +8,8 @@ import GuestMyPage from "./pages/Guest/GuestMyPage";
 import ListPage from "./pages/List/ListPage";
 import DetailPage from "./pages/Detail/DetailPage";
 import Home from "./pages/Main/Home";
+import PlaceResister from "./pages/Main/PlaceResister";
+import FareInfo from "./pages/Main/FareInfo";
 
 const LayoutContainer = tw.div`
   w-screen
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
       { path: "detail", element: <DetailPage /> },
       { path: "guestMyPage", element: <GuestMyPage /> },
       { path: "home", element: <Home /> },
+      { path: "addspace", element: <PlaceResister /> },
+      { path: "addfare", element: <FareInfo /> },
     ],
   },
   { path: "login", element: <Login /> },
