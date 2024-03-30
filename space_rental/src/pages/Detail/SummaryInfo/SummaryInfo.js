@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Category, InfoOptionValue, InfoSubTitle, InfoWrap, SummaryContainer, TitleWrap } from './SummaryInfoStyle';
 import { FaDog, FaHeart, FaLocationDot, FaRegHeart, FaSquareParking, FaStar, FaWifi } from 'react-icons/fa6';
 
 function SummaryInfo() {
+  const [cartClick, setCartClick] = useState(false);
+  const cartClickHandler = () => {
+    setCartClick(!cartClick);
+  }
   return (
     <SummaryContainer>
       <div className='my-2'>
@@ -11,8 +15,10 @@ function SummaryInfo() {
 
       <TitleWrap>
         <p>스페이스 주다 을지로 1호점</p>
-        <button className='ml-2'>
-          <FaRegHeart />
+        <button className='ml-2' onClick={cartClickHandler}>
+          {!cartClick ?
+            <FaRegHeart /> : <FaHeart />
+          }
         </button>
       </TitleWrap>
 

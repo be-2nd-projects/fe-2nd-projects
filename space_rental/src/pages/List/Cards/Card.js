@@ -25,7 +25,7 @@ function Card() {
 
         <ListInfoRight>
           <div className='flex text-white text-sm'>
-            <div className='flex text-red-400'>
+            <div className='flex text-red-500'>
               <FaHeart />
               <span className='ml-1 font-bold'>128</span>
             </div>
