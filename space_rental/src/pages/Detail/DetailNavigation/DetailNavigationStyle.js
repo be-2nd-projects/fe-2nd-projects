@@ -13,7 +13,7 @@ export const NavWrap = tw.ul`
 `;
 
 export const NavList = tw.li`
-  p-5
+  p-4
   font-bold
   cursor-pointer
   hover:text-indigo-700
