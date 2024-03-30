@@ -1,3 +1,4 @@
+import { toBeRequired } from "@testing-library/jest-dom/matchers";
 import tw from "tailwind-styled-components";
 
 export const SectionContainer = tw.div`
@@ -7,7 +8,6 @@ export const SectionContainer = tw.div`
   border-solid
   border-white
 `;
-
 export const SectionTitle = tw.div`
   before:block
   before:absolute
