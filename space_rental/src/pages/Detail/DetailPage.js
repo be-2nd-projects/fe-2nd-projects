@@ -2,6 +2,8 @@ import React from 'react';
 import ImgGroup from './DetailImage/ImgGroup';
 import SummaryInfo from './SummaryInfo/SummaryInfo';
 import DetailNavigation from './DetailNavigation/DetailNavigation';
+import Detaillnfo from './DetailInfo/Detaillnfo';
+import DetailCaution from './DetailCaution/DetailCaution.js';
 
 function DetailPage() {
   return (
@@ -9,6 +11,8 @@ function DetailPage() {
       <ImgGroup />
       <SummaryInfo />
       <DetailNavigation />
+      <Detaillnfo />
+      <DetailCaution />
     </div>
   );
 }
