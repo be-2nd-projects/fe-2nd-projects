@@ -7,6 +7,7 @@ export const SectionContainer = tw.div`
   border-solid
   border-white
 `;
+
 export const SectionTitle = tw.div`
   before:block
   before:absolute
@@ -23,8 +24,4 @@ export const SectionTitle = tw.div`
   text-2xl
   my-6
   ml-2
-`;
-
-export const SectionContent = tw.div`
-  text-white
 `;

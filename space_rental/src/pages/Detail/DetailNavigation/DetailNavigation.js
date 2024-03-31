@@ -46,6 +46,7 @@ function DetailNavigation() {
         }
       </NavWrap>
 
+
       <ButtonWrap>
         <Button>
           예약하기

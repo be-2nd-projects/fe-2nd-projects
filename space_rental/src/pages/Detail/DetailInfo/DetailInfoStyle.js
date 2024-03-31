@@ -22,11 +22,10 @@ export const SectionTitle = tw.div`
   text-white
   font-bold
   text-2xl
-  mt-6
+  my-6
   ml-2
 `;
 
-export const SectionContent = tw.p`
-  mt-6
+export const SectionContent = tw.div`
   text-white
 `;
