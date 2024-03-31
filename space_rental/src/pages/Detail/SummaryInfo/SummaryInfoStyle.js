@@ -2,7 +2,7 @@ import tw from "tailwind-styled-components";
 
 export const SummaryContainer = tw.div`
   mt-9
-  border-slate-300 border-solid border-2
+  pb-4
 `;
 
 export const TitleWrap = tw.p`
@@ -35,7 +35,6 @@ export const InfoSubTitle = tw.li`
 
 
 export const InfoOptionValue = tw.li`
-  ml-1
   px-3 
   py-1
   border-white
@@ -45,4 +44,5 @@ export const InfoOptionValue = tw.li`
   flex
   justify-center
   items-center
+  mr-2
 `;
