@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import tw from "tailwind-styled-components";
 import Logo from "../../assets/images/logo.png";
 import { FiLogIn } from "react-icons/fi";
@@ -17,6 +18,7 @@ const HeaderContainer = tw.header`
   font-bold  
   sticky
   top-0
+  z-10
 `;
 
 const HeaderWrap = tw.div`
@@ -44,12 +46,17 @@ function Header() {
   const handleLogout = () => {
     setLoggedIn(false);
   };
+  const navigate = useNavigate(); // 여기서 useNavigate를 호출
+
+  const navigateHome = () => {
+    navigate("/");
+  };
 
   return (
     <HeaderContainer>
       <HeaderWrap>
         <div>
-          <div className="logo">
+          <div className="logo " onClick={navigateHome}>
             <img src={Logo} alt="logo" className="w-24" />
           </div>
         </div>

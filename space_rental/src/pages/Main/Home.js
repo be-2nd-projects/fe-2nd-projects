@@ -86,9 +86,8 @@ const Home = () => {
 
   return (
     <div
-      className={`page ${
-        showNextPage ? "show-next-page" : ""
-      } wrap max-w-6xl mx-auto my-0`}
+      className={`page ${showNextPage ? "show-next-page" : ""}
+      wrap max-w-6xl mx-auto my-0  `}
     >
       {/* 현재 페이지 컨텐츠 (1P) */}
       <div

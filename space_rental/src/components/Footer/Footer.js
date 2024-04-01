@@ -5,8 +5,7 @@ const FooterContainer = tw.footer`
   w-screen
   h-32
   bg-slate-100
-
- 
+  mt-28
 `;
 
 const FooterWrap = tw.div`
