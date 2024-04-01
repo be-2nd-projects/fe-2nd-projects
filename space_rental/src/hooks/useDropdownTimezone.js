@@ -11,7 +11,7 @@ const customStyles = {
     ...provided,
     borderRadius: "20px",
     height: "100px",
-    width: "350px",
+    width: "200px",
     paddingLeft: "10px",
     paddingTop: "10px",
   }),
@@ -38,8 +38,8 @@ const customStyles = {
   }),
 };
 
-const Dropdown = () => (
-  <Select styles={customStyles} options={options} placeholder="시간 선택" />
+const DropdownTimezone = () => (
+  <Select styles={customStyles} options={options} placeholder="0시" />
 );
 
-export default Dropdown;
+export default DropdownTimezone;
