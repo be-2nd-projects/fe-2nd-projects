@@ -9,6 +9,7 @@ import Home2 from "./Home2";
 import Home3 from "./Home3";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
+import Reservation from "../Reservation/Reservation";
 
 const Home = () => {
   const [showNextPage, setShowNextPage] = useState(false);
@@ -167,6 +168,8 @@ const Home = () => {
       )}
     </div>
   );
+
 };
+
 
 export default Home;
