@@ -11,6 +11,7 @@ import PlaceRegister from "./pages/Main/PlaceRegister";
 import FareInfo from "./pages/Main/FareInfo";
 import FareInfoHourly from "./pages/Main/FareInfoHourly";
 import FareInfoTimeZone from "./pages/Main/FareInfoTimeZone";
+import Reservation from "./pages/Reservation/Reservation";
 
 const LayoutContainer = tw.div`
   w-screen
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "addfare", element: <FareInfo /> },
       { path: "addhourly", element: <FareInfoHourly /> },
       { path: "addtimezone", element: <FareInfoTimeZone /> },
+      { path: "reservation", element: <Reservation /> },
     ],
   },
   { path: "login", element: <Login /> },

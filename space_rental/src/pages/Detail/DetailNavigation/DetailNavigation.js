@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Button, ButtonWrap, NavContainer, NavList, NavWrap } from './DetailNavigationStyle';
+import {useNavigate} from 'react-router-dom'
 
 function DetailNavigation() {
   const [selectedNav, setSelectedNav] = useState(false);
+
+  const navigate=useNavigate();
   const navMenus = [
     {
       id: 1,
@@ -30,6 +33,10 @@ function DetailNavigation() {
     setSelectedNav(id)
   }
 
+  const navigateToreservation=()=>{
+    navigate(`/reservation`)
+  }
+
   return (
     <NavContainer>
       <NavWrap>
@@ -48,7 +55,7 @@ function DetailNavigation() {
 
 
       <ButtonWrap>
-        <Button>
+        <Button onClick={navigateToreservation}>
           예약하기
         </Button>
       </ButtonWrap>
