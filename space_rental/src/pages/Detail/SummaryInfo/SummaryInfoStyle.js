@@ -5,7 +5,7 @@ export const SummaryContainer = tw.div`
   pb-4
 `;
 
-export const TitleWrap = tw.p`
+export const TitleWrap = tw.div`
 flex mt-4 mb-8 text-white text-4xl font-bold
 `;
 

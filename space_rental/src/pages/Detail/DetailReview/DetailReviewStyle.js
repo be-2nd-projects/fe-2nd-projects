@@ -65,8 +65,8 @@ export const ReviewDate = tw.div`
 `;
 
 export const ReviewImgWrap = tw.div`
-  basis-1/5
+  basis-1/6
   mr-4
-  my-4
+  my-2
   rounded-lg
 `;
