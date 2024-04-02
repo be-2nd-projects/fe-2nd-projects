@@ -9,7 +9,8 @@ const initialState = {
     totalPrice : 0 ,
     selectIndex :[] ,
     payment :'',
-    person:0
+    person:0,
+    reserveDate: new Date()
 }
 
 
@@ -80,6 +81,13 @@ const reserveReducer = (state=initialState,action)=>{
                     selectTime:[],
                     totalPrice: 0
                 }
+            
+            case 'selectdate' :
+                return{
+                    ...state,
+                    reserveDate :action.payload
+                }
+            
 
 
             default:
