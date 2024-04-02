@@ -1,5 +1,6 @@
 import React from "react";
 import "./ScrollTransition.css"; // 스타일 파일
+import { BiSolidLeftArrow } from "react-icons/bi";
 
 export default function Home3({
   toggleSearch,
@@ -7,10 +8,23 @@ export default function Home3({
   searchBarFold,
   searchBarUnfold,
   optionSelect,
+  setShowQuestionPage, // 함수를 props로 받음
+  setShowNextPage, // 함수를 props로 받음
 }) {
+  // 함수 내에서 사용할 goToFirstQuestionPage 정의
+  const goToPrevQuestionPage = () => {
+    setShowQuestionPage(1); // 첫번째 질문으로 이동
+    setShowNextPage(true); // 다음 페이지 보이도록 설정
+  };
   return (
     <>
-      <div className="pt-[200px] text-7xl font-bold text-white">
+      <div className="pt-[150px] text-7xl font-bold text-white">
+        <div onClick={goToPrevQuestionPage} className="icon-back">
+          <BiSolidLeftArrow
+            className="w-8 h-8 mb-12 "
+            style={{ color: "#DFDBDB" }}
+          />
+        </div>
         <div className="text-6xl mb-2">어떤 용도로 사용하실 건가요?</div>
 
         <button onClick={toggleSearch}>

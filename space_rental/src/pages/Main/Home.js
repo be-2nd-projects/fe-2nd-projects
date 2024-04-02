@@ -94,7 +94,7 @@ const Home = () => {
       <div
         className={`current-page ${
           showQuestionPage !== 0 ? "hidden" : ""
-        } wrap max-w-6xl mx-auto my-0 `}
+        } wrap max-w-6xl w-full my-0 `}
       >
         <Home1 />
       </div>
@@ -128,6 +128,8 @@ const Home = () => {
             searchBarFold={searchBarFold}
             searchBarUnfold={searchBarUnfold}
             optionSelect={optionSelect}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
           />
         </div>
       )}
@@ -146,6 +148,8 @@ const Home = () => {
             setSelectedDate={setSelectedDate}
             handleDateOption={handleDateOption}
             SearchBar={SearchBar}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
           />
         </div>
       )}
@@ -163,13 +167,13 @@ const Home = () => {
             plusNumberOfPeople={plusNumberOfPeople}
             minusNumberOfPeople={minusNumberOfPeople}
             currentNumberOfPeople={currentNumberOfPeople}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
           />
         </div>
       )}
     </div>
   );
-
 };
-
 
 export default Home;
