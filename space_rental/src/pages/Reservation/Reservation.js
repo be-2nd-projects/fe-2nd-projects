@@ -60,37 +60,41 @@ const Reservation = () => {
 
     return (
         <>
-        <div className="flex">
+        <div className="wrap max-w-6xl mx-auto my-0 flex text-5xl">
         <div className="w-2/3 bg-white-200">
         <div>
-            <h1 className='text-left'>선택한장소</h1>
+            <h1 className='text-left text-4xl'>선택한장소</h1>
             </div>
-            <h1 className='text-left'>날짜</h1>
-            <div>  <Calender class="justify-center" ></Calender></div>
+            <h1 className='text-left text-4xl'>날짜</h1>
+            <div className="flex flex-col items-center">  <Calender ></Calender></div>
             <div style={{borderBottom: '2px solid white' }}>
-            <h1 className='text-left'>인원</h1>
+            <h1 className='text-left text-4xl mt-5'>인원</h1>
             </div>
             <div className='mt-4'>
             <Person></Person>
             </div>
             <div>
             <div style={{borderBottom: '2px solid white' }}>
-              <h1 className='text-left'>시간 선택</h1>
+              <h1 className='text-left text-4xl mt-5'>시간 선택</h1>
             </div>
             <div className='mt-4'>
             <PriceButtonSlider reserveYsno={reserveYsno} pricepertime={pricepertime} Selectpricehandler={Selectpricehandler} />
             </div>
         </div>
         <div style={{borderBottom: '2px solid white' }}>
-        <h1 className='text-left' >예약정보</h1>
+        <h1 className='text-left text-4xl mt-7' >예약정보</h1>
         </div>
         {/* <div className= " bg-white-400 border-t-zinc-800"> */}
           <div>
-        <h2 className='text-left' >예약시간</h2>
-        <div>{timearray.length > 1 ? <div>{startTime} - {endTime} </div>: <div>{startTime}</div>}</div>
-        <div>{!totalTime  ? <div></div>: <div>{totalTime}시간</div>}</div>
-            <h2 className='text-left'>총가격</h2>
-            {totalPrice}
+            <div className='flex items-center'>
+        <h2 className='text-left text-3xl mt-5' >예약시간 :  </h2>
+        <div className='text-3xl' >{timearray.length > 1 ? <div>{startTime} - {endTime} </div>: <div>{startTime}</div>}</div>
+        <div className='text-3xl'>{!totalTime  ? <div></div>: <div> ( {totalTime}시간 )</div>}</div>
+        </div>
+        <div className='flex items-center'>
+            <h2 className='text-left text-3xl'>총가격 :  </h2>
+            <div className='text-3xl' > {totalPrice}</div>
+            </div>
             </div>
         <div  >
         { modalIsOpen && <ErrorModal errorMessage={errorMessage} modalIsOpen={modalIsOpen}

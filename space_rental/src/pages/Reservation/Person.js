@@ -18,7 +18,7 @@ const Person = () => {
     return (
         <div className='flex justify-center '>
             <Button className="border border-gray-800 px-4 py-2 rounded-lg " onClick={deletepersonhandler}>-</Button>
-            <div>{person}</div>
+            <div className='text-4xl'>{person}</div>
             <Button className="border border-gray-800 px-4 py-2 rounded-lg " variant="outlined" onClick={addpersonhandler}> +</Button>
         </div>
     );
