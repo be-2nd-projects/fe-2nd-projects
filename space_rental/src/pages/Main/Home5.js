@@ -13,7 +13,7 @@ export default function Home5({
 }) {
   const navigate = useNavigate();
 
-  const goToDetailPage = () => navigate("/detail");
+  const goToListPage = () => navigate("/list");
 
   const goToPrevQuestionPage = () => {
     setShowQuestionPage(3); // 두번째 질문으로 이동
@@ -21,10 +21,10 @@ export default function Home5({
   };
   return (
     <>
-      <div className="pt-[150px] text-7xl font-bold text-white">
+      <div className="pt-[110px] text-7xl font-bold text-white">
         <div onClick={goToPrevQuestionPage} className="icon-back">
           <BiSolidLeftArrow
-            className="w-8 h-8 mb-12 "
+            className="w-6 h-6 mb-12 "
             style={{ color: "#DFDBDB" }}
           />
         </div>
@@ -52,7 +52,7 @@ export default function Home5({
             </div>
           </div>
           <button
-            onClick={goToDetailPage}
+            onClick={goToListPage}
             className="rounded-xl bg-[#23EAAE] shadow-xl px-4 py-2"
           >
             검색하기

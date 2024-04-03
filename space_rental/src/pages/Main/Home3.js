@@ -18,10 +18,10 @@ export default function Home3({
   };
   return (
     <>
-      <div className="pt-[150px] text-7xl font-bold text-white">
+      <div className="pt-[110px] text-7xl font-bold text-white">
         <div onClick={goToPrevQuestionPage} className="icon-back">
           <BiSolidLeftArrow
-            className="w-8 h-8 mb-12 "
+            className="w-6 h-6 mb-12 "
             style={{ color: "#DFDBDB" }}
           />
         </div>
@@ -36,7 +36,7 @@ export default function Home3({
         </button>
       </div>
       {isExpanded && (
-        <div className="px-44 flex justify-center text-5xl text-black ">
+        <div className="flex justify-center text-5xl text-black ">
           <div className="w-screen mx-4 bg-white rounded-xl shadow-xl">
             <div onClick={optionSelect} className="border-b-2 pt-4 pl-4 pb-1.5">
               미팅룸

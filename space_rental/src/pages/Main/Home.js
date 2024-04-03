@@ -80,7 +80,9 @@ const Home = () => {
   };
 
   const handleDateOption = () => {
-    setDateSelected(true);
+    setDateSelected(true); // 날짜가 선택되었다는 상태를 업데이트
+    setShowQuestionPage(4); // 다음 페이지로 이동하기 위해 상태 업데이트, 여기서 5는 예시이며 실제 다음 페이지의 인덱스나 ID에 맞게 조정해야 합니다.
+    setShowNextPage(true); // 다음 페이지를 보여주도록 설정
   };
 
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -150,6 +152,7 @@ const Home = () => {
             SearchBar={SearchBar}
             setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
             setShowNextPage={setShowNextPage} // 함수를 props로 추가
+            handleDateSelection={() => setDateSelected(true)}
           />
         </div>
       )}
