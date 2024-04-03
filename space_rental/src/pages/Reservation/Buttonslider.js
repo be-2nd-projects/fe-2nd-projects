@@ -39,14 +39,16 @@ const PriceButtonSlider = ({ pricelist, timelist, Selectpricehandler,pricepertim
     <Slider ref={(slider) => setSlider(slider)} {...settings} >
     
         {Object.entries(pricepertime).map(([time, price],index) => (
+          <div>
         <button  className="border border-gray-800 px-4 py-2 rounded-lg " disabled={reserveYsno[index]==='y'} 
          key={index} onClick={() =>  Selectpricehandler({price,time,index,pricepertime}) }>
            <div style={{backgroundColor: selectIndex.includes(index) ? 'green' : reserveYsno[index]==='y' ? 'navy' :'transparent' }}>
           {/* <div>{index}</div> */}
-          <div style={{textAlign:'left'}}>{time}</div>
-          <div >{price}원</div>
+          <div className='text-lg'>{time}</div>
+          <div className='text-lg'>{price}원</div>
           </div>
         </button>
+        </div>
       ))}    
     </Slider>
     </div>

@@ -22,7 +22,16 @@ const Payment = () => {
     const selectTime = useSelector((state)=>state.selectTime);
     const totalPrice = useSelector((state)=>state.totalPrice);
     const person = useSelector((state)=>state.person);
+    const date = useSelector((state)=>state.reserveDate);
 
+    const timearray = selectTime.map(item => parseInt(item)).sort(function(a, b){ return a-b; });
+
+    const startTime = timearray.length>0 ? timearray[0]+':00': ''
+    const endTime = (parseInt(timearray[timearray.length-1])+1).toString() + ':00'
+
+    const reservemonth = new Date(date).getMonth()+1;
+    const reservedate = new Date(date).getDate();
+    const reserveyear= new Date(date).getFullYear();
 
 
     const [isagree, setIsagree] =useState(false);
@@ -52,34 +61,38 @@ const Payment = () => {
       setModalIsOpen(false);
     }
 
+    const reservationInfo = {
+      selectTime,
+      totalPrice,
+      payment,
+      person,
+      startTime,
+      endTime,
+      date
+    }
+
+    console.log(reservationInfo)
+    
     const clickpaymenthandler=()=>{
 
       if (isagree===false || ischeck === false){
         setErrorMessage("필수 동의항목을 체크해주세요");
         openModal();
       }
-      const reservationInfo = {
-        selectTime,
-        totalPrice,
-        payment,
-        person
-      }
-
-      console.log(reservationInfo)
     }
 
     return (
         <>
-        <h1>결제방법</h1>
-        <div>
-        <input
+        <h1 className='text-left text-4xl'>결제방법</h1>
+        <div className='text-left text-xl'>
+        <input 
           type='radio'     
           onChange={Selectpaymenthandler}     
           value='kakaopay'
           checked={payment === 'kakaopay'}
         />
         카카오페이</div>
-        <div>
+        <div className='text-left text-xl'>
         <input
           type='radio'
           onChange={Selectpaymenthandler}  
@@ -87,14 +100,14 @@ const Payment = () => {
           checked={payment === 'creditcard'}
         />
         신용카드</div>
-        <h2>동의 체크</h2>
-        <div>
+        <h2 className='text-left text-4xl'>동의 체크</h2>
+        <div className='text-left text-xl'>
         <input
           type='checkbox'
           onChange={isagreehandler}
         />
         개인정보동의 확인</div>
-        <div>
+        <div className='text-left text-xl'>
         <input
           type='checkbox'
           onChange={ischeckhandler}
