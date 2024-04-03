@@ -25,6 +25,7 @@ export const InfoWrap = tw.ul`
   text-white
   text-lg
   my-2
+  flex-wrap
 `;
 
 export const InfoSubTitle = tw.li`
@@ -45,4 +46,5 @@ export const InfoOptionValue = tw.li`
   justify-center
   items-center
   mr-2
+  mb-2
 `;

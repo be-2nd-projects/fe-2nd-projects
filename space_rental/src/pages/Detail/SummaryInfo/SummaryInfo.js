@@ -1,9 +1,35 @@
 import React, { useState } from 'react';
-import { Category, InfoOptionValue, InfoSubTitle, InfoWrap, SummaryContainer, TitleWrap } from './SummaryInfoStyle';
-import { FaDog, FaHeart, FaLocationDot, FaRegHeart, FaSquareParking, FaStar, FaWifi } from 'react-icons/fa6';
+import {
+  Category,
+  InfoOptionValue,
+  InfoSubTitle,
+  InfoWrap,
+  SummaryContainer,
+  TitleWrap
+} from './SummaryInfoStyle';
+import { FaBanSmoking, FaDog, FaHeart, FaLocationDot, FaRegHeart, FaShower, FaSquareParking, FaStar, FaWifi } from 'react-icons/fa6';
+import { Tb24Hours } from "react-icons/tb";
+import { FaWineBottle } from "react-icons/fa";
+import { GrElevator } from "react-icons/gr";
+import { MdChildCare } from "react-icons/md";
+import { IoFastFoodOutline } from "react-icons/io5";
 
 function SummaryInfo() {
   const [cartClick, setCartClick] = useState(false);
+
+  const spaceOptions = [
+    { title: '와이파이', icon: <FaWifi /> },
+    { title: '주차가능', icon: <FaSquareParking /> },
+    { title: '반려동물', icon: <FaDog /> },
+    { title: '엘레베이터', icon: <GrElevator /> },
+    { title: '유아동반', icon: <MdChildCare /> },
+    { title: '금연가능', icon: <FaBanSmoking /> },
+    { title: '음식반입', icon: <IoFastFoodOutline /> },
+    { title: '샤워실', icon: <FaShower /> },
+    { title: '주류반입', icon: <FaWineBottle /> },
+    { title: '24시운영', icon: <Tb24Hours /> }
+  ]
+
   const cartClickHandler = () => {
     setCartClick(!cartClick);
   }
@@ -53,24 +79,17 @@ function SummaryInfo() {
 
       <InfoWrap className='items-center'>
         <InfoSubTitle>옵션</InfoSubTitle>
-        <InfoOptionValue>
-          <span className='text-xl mr-1'>
-            <FaWifi />
-          </span>
-          <span className='text-sm mt-1'>와이파이</span>
-        </InfoOptionValue>
-        <InfoOptionValue>
-          <span className='text-xl mr-1'>
-            <FaSquareParking />
-          </span>
-          <span className='text-sm mt-1'>주차가능</span>
-        </InfoOptionValue>
-        <InfoOptionValue>
-          <span className='text-xl mr-1'>
-            <FaDog />
-          </span>
-          <span className='text-sm mt-1'>애견동반</span>
-        </InfoOptionValue>
+        {spaceOptions.map((opt, index) => (
+          <InfoOptionValue key={index}>
+            <span className='text-lg mr-1'>
+              {opt.icon}
+            </span>
+            <span className='text-xs mt-1'>
+              {opt.title}
+            </span>
+          </InfoOptionValue>
+        ))}
+
       </InfoWrap>
     </SummaryContainer>
   );
