@@ -27,7 +27,5 @@ export const SectionTitle = tw.div`
 `;
 
 export const SectionContent = tw.div`
-  border-2
-  border-black
-  border-solid
+  rounded-lg
 `;
