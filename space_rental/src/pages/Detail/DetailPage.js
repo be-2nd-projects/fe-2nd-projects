@@ -10,7 +10,7 @@ import DetailQnA from './DetailQnA/DetailQnA';
 
 function DetailPage() {
   return (
-    <div className='wrap max-w-6xl mx-auto my-0 border-orange-700 border-solid border-2'>
+    <div className='wrap max-w-6xl mx-auto my-0'>
       <ImgGroup />
       <SummaryInfo />
       <DetailNavigation />
