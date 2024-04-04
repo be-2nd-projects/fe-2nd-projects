@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +8,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [birthdate, setBirthdate] = useState("");
-
+  const [signupSuccess, setSignupSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async (event) => {
@@ -29,7 +29,7 @@ const Signup = () => {
     };
 
     try {
-      const response = await fetch("요청지 주소", {
+      const response = await fetch("백엔드 API 주소", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,8 @@ const Signup = () => {
 
       if (response.status === 201) {
         console.log("성공! 이메일주소: " + data.email);
-        navigate("/login");
+        setSignupSuccess(true); // 회원가입 성공 상태로 변경
+        setTimeout(() => navigate("/home"), 2000); // 2초 후 홈 화면으로 이동
       } else if (response.status === 400) {
         alert(`회원가입 실패: ${data.email}`);
       }
@@ -164,6 +165,12 @@ const Signup = () => {
               확인
             </button>
           </div>
+
+          {signupSuccess && (
+            <div className="text-center mt-4 text-green-600">
+              회원가입이 성공적으로 완료되었습니다.
+            </div>
+          )}
         </form>
       </div>
     </div>
