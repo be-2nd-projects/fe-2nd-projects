@@ -11,7 +11,7 @@ import FareInfo from "./pages/Main/FareInfo";
 import FareInfoHourly from "./pages/Main/FareInfoHourly";
 import FareInfoTimeZone from "./pages/Main/FareInfoTimeZone";
 import Reservation from "./pages/Reservation/Reservation";
-import Mypage from "./pages/Mypage/mypage";
+import Mypage from "./pages/Mypage/Mypage";
 
 const LayoutContainer = tw.div`
   w-screen
