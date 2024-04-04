@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-const maintenance = () => {
+const Maintenance = () => {
     return (
         <div>
             <div class="container">
@@ -19,4 +19,4 @@ const maintenance = () => {
     );
 };
 
-export default maintenance;
+export default Maintenance;
