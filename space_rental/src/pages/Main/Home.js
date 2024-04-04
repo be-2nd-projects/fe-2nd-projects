@@ -9,7 +9,7 @@ import Home2 from "./Home2";
 import Home3 from "./Home3";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
-import Reservation from "../Reservation/Reservation";
+import "./Home.css";
 
 const Home = () => {
   const [showNextPage, setShowNextPage] = useState(false);
@@ -67,6 +67,13 @@ const Home = () => {
     }
   };
 
+  const handleImageClick = () => {
+    if (firstSearchText.trim() !== "") {
+      setShowQuestionPage(2);
+      setShowNextPage(true); // 첫 번째 질문에서 이미지를 클릭하면 다음 페이지로 이동하도록 설정
+    }
+  };
+
   const handleSecondSearchInputChange = (event) => {
     setSecondSearchText(event.target.value);
   };
@@ -80,7 +87,9 @@ const Home = () => {
   };
 
   const handleDateOption = () => {
-    setDateSelected(true);
+    setDateSelected(true); // 날짜가 선택되었다는 상태를 업데이트
+    setShowQuestionPage(4); // 다음 페이지로 이동하기 위해 상태 업데이트, 여기서 5는 예시이며 실제 다음 페이지의 인덱스나 ID에 맞게 조정해야 합니다.
+    setShowNextPage(true); // 다음 페이지를 보여주도록 설정
   };
 
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -88,13 +97,13 @@ const Home = () => {
   return (
     <div
       className={`page ${showNextPage ? "show-next-page" : ""}
-      wrap max-w-6xl mx-auto my-0  `}
+        wrap max-w-6xl mx-auto  my-0  `}
     >
       {/* 현재 페이지 컨텐츠 (1P) */}
       <div
         className={`current-page ${
           showQuestionPage !== 0 ? "hidden" : ""
-        } wrap max-w-6xl mx-auto my-0 `}
+        } wrap max-w-6xl w-full my-0 `}
       >
         <Home1 />
       </div>
@@ -111,6 +120,7 @@ const Home = () => {
           firstSearchText={firstSearchText}
           onSearchTextChange={handleFirstSearchInputChange}
           onSearchKeyDown={handleFirstSearchInputKeyDown}
+          handleImageClick={handleImageClick}
         />
       </div>
 
@@ -128,6 +138,8 @@ const Home = () => {
             searchBarFold={searchBarFold}
             searchBarUnfold={searchBarUnfold}
             optionSelect={optionSelect}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
           />
         </div>
       )}
@@ -146,6 +158,9 @@ const Home = () => {
             setSelectedDate={setSelectedDate}
             handleDateOption={handleDateOption}
             SearchBar={SearchBar}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
+            handleDateSelection={() => setDateSelected(true)}
           />
         </div>
       )}
@@ -163,13 +178,13 @@ const Home = () => {
             plusNumberOfPeople={plusNumberOfPeople}
             minusNumberOfPeople={minusNumberOfPeople}
             currentNumberOfPeople={currentNumberOfPeople}
+            setShowQuestionPage={setShowQuestionPage} // 함수를 props로 추가
+            setShowNextPage={setShowNextPage} // 함수를 props로 추가
           />
         </div>
       )}
     </div>
   );
-
 };
-
 
 export default Home;

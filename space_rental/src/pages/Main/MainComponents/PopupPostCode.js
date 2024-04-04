@@ -35,10 +35,10 @@ const PopupPostCode = ({ onAddressSelect }) => {
   return (
     <button
       type="button"
-      className="bg-white pt-2 px-2 h-12 rounded-xl text-3xl"
+      className="bg-[#74F4CE] w-36 pt-2 px-2 h-20 rounded-3xl mb-3 text-4xl"
       onClick={handleClick}
     >
-      우편번호 찾기
+      찾기
     </button>
   );
 };

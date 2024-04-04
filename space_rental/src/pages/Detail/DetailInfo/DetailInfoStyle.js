@@ -3,6 +3,7 @@ import tw from "tailwind-styled-components";
 export const SectionContainer = tw.div`
   relative
   pb-8
+  font-light
   border-b
   border-solid
   border-white
