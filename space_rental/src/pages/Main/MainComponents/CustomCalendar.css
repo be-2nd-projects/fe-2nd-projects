@@ -1,0 +1,16 @@
+.customCalendar .react-calendar {
+  width: auto;
+  height: auto;
+  padding: 100px 300px;
+  margin: 20px 20px 240px 20px;
+  border-radius: 15px;
+  font-size: 31px;
+}
+.customCalendar {
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none; /* abbr 태그에 적용된 점선이나 밑줄을 제거 */
+}
