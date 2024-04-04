@@ -3,7 +3,6 @@ import tw from "tailwind-styled-components";
 import Layout from "./pages/Layout";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/SignUp";
-import GuestMyPage from "./pages/Guest/GuestMyPage";
 import ListPage from "./pages/List/ListPage";
 import DetailPage from "./pages/Detail/DetailPage";
 import Home from "./pages/Main/Home";
@@ -12,6 +11,7 @@ import FareInfo from "./pages/Main/FareInfo";
 import FareInfoHourly from "./pages/Main/FareInfoHourly";
 import FareInfoTimeZone from "./pages/Main/FareInfoTimeZone";
 import Reservation from "./pages/Reservation/Reservation";
+import Mypage from "./pages/Mypage/mypage";
 
 const LayoutContainer = tw.div`
   w-screen
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "list", element: <ListPage /> },
       { path: "detail", element: <DetailPage /> },
-      { path: "guestMyPage", element: <GuestMyPage /> },
+      { path: "myPage", element: <Mypage /> },
       { path: "home", element: <Home /> },
       { path: "addspace", element: <PlaceRegister /> },
       { path: "addfare", element: <FareInfo /> },
