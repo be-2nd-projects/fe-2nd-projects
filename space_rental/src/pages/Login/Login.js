@@ -1,5 +1,3 @@
-import React from "react";
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,9 +20,9 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center bg-blue-500 p-0">
-      <div className="page w-full max-w-2xl px-4 py-10 flex justify-center items-center flex-col">
-        <div className="titleWrap font-yg-jalnan text-3xl text-white font-bold text-gray-800 mt-10">
+    <div className="bg-indigo-600 h-screen flex justify-center items-center">
+      <div className="page w-full p-0 flex justify-center items-center flex-col">
+        <div className="titleWrap font-yg-jalnan text-4xl text-white font-bold text-gray-800 mt-10">
           로그인하기
         </div>
         <div className="flex flex-col justify-center items-center bg-white rounded-lg p-8 mt-6">
@@ -32,9 +30,9 @@ export default function Login() {
             <div className="inputTitle text-sm font-semibold text-gray-800">
               로그인 이메일
             </div>
-            <div className="inputWrap mt-2 rounded-lg bg-gray-200">
+            <div className="inputWrap mt-2 rounded-lg bg-gray-200 ">
               <input
-                className="input outline-none bg-transparent placeholder-gray-500 px-4 py-2 w-full text-white"
+                className="input outline-none bg-transparent placeholder-gray-500 px-4 py-2 w-full text-black rounded-lg"
                 type="text"
                 placeholder="place@place.kr"
                 value={email}
@@ -46,7 +44,7 @@ export default function Login() {
             </div>
             <div className="inputWrap mt-2 rounded-lg bg-gray-200">
               <input
-                className="input outline-none bg-transparent placeholder-gray-500 px-4 py-2 w-full"
+                className="input outline-none bg-transparent placeholder-gray-500 px-4 py-2 w-full rounded-lg"
                 type="password"
                 placeholder="비밀번호를 입력하세요"
                 value={pw}
@@ -65,9 +63,18 @@ export default function Login() {
           </button>
           <button
             onClick={navigateToSignup}
-            className="bottomButton flex-1 px-8 py-2 rounded-lg bg-yellow-100 text-black font-semibold text-sm ml-14 mt-2"
+            className="bottomButton px-10 py-2 rounded-lg bg-yellow-100 text-black font-semibold text-sm ml-14 mt-2"
           >
             JOIN
+          </button>
+        </div>
+
+        <div className="flex">
+          <button className="naverButton px-10 py-2 rounded-lg bg-green-500 text-white font-semibold text-sm mr-2 mt-2">
+            네이버 로그인
+          </button>
+          <button className="googleButton px-10 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm ml-2 mt-2">
+            구글 로그인
           </button>
         </div>
       </div>

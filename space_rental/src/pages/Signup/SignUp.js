@@ -51,24 +51,25 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-blue-500 h-screen flex justify-center items-center">
-      <div className="absolute top-0 left-0 right-0 text-center text-gray-800 font-yg-jalnan text-3xl font-bold mt-10">
+    <div className="bg-indigo-600 h-screen flex justify-center items-center flex-col">
+      <div className="text-center text-white font-yg-jalnan text-3xl font-bold mt-10">
         회원 등록하기
       </div>
+
       <div
         className="bg-white p-8 rounded-lg shadow-md mt-4"
         style={{ width: "400px" }}
       >
         <form>
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-2"
               htmlFor="email"
             >
               로그인 이메일
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto" //
               type="email"
               id="email"
               value={email}
@@ -76,15 +77,15 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-10"
               htmlFor="username"
             >
               이름
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto"
               type="text"
               id="username"
               value={username}
@@ -92,15 +93,15 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-10"
               htmlFor="phoneNumber"
             >
               휴대폰 번호
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto"
               type="text"
               id="phoneNumber"
               value={phoneNumber}
@@ -108,15 +109,15 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-10"
               htmlFor="password"
             >
               비밀번호
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto"
               type="password"
               id="password"
               value={password}
@@ -124,15 +125,15 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-10"
               htmlFor="confirmPassword"
             >
               비밀번호 확인
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto"
               type="password"
               id="confirmPassword"
               value={confirmPassword}
@@ -140,28 +141,29 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-row items-center mb-4">
             <label
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm font-semibold text-gray-700 mr-10"
               htmlFor="birthdate"
             >
               생년월일
             </label>
             <input
-              className="input-field mt-2 bg-blue-200  rounded-lg"
+              className="input-field bg-blue-200 rounded-lg h-8 w-50 ml-auto"
               type="date"
               id="birthdate"
               value={birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
             />
           </div>
-
-          <button
-            className="button bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg"
-            onClick={handleSignup}
-          >
-            확인
-          </button>
+          <div className="flex justify-center">
+            <button
+              className="button bg-indigo-600 text-white font-semibold py-2 px-20 rounded-lg"
+              onClick={handleSignup}
+            >
+              확인
+            </button>
+          </div>
         </form>
       </div>
     </div>
