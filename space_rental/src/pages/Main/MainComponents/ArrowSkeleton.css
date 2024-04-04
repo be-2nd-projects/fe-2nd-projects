@@ -1,0 +1,26 @@
+.arrow-skeleton {
+  width: 24px; /* 가로 길이 */
+  height: 15px; /* 세로 높이 */
+  display: flex;
+  align-items: center; /* 세로 정렬을 위해 center로 변경 */
+  justify-content: center;
+}
+
+.arrow-icon {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent; /* 왼쪽 선의 크기를 조정하여 역삼각형 모양으로 만듭니다 */
+  border-right: 12px solid transparent; /* 오른쪽 선의 크기를 조정하여 역삼각형 모양으로 만듭니다 */
+  border-top: 15px solid #ddd; /* 윗부분의 크기를 조정하여 역삼각형 모양으로 만듭니다 */
+  opacity: 0.5; /* 투명도 추가 */
+  animation: arrowLoading 0.7s infinite alternate; /* 애니메이션 추가 */
+}
+
+@keyframes arrowLoading {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

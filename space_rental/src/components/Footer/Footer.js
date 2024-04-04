@@ -4,13 +4,14 @@ import tw from "tailwind-styled-components";
 const FooterContainer = tw.footer`
   w-screen
   h-32
-  bg-slate-100
+  bg-[#F7f7f7]
   mt-28
+  fixed bottom-0
 `;
 
 const FooterWrap = tw.div`
   w-full
-  max-w-7xl
+  max-w-6xl
   mx-auto
   my-0 
 `;
@@ -18,7 +19,7 @@ const FooterWrap = tw.div`
 function Footer() {
   return (
     <FooterContainer>
-      <FooterWrap>하단입니다~</FooterWrap>
+      <FooterWrap>고객센터</FooterWrap>
     </FooterContainer>
   );
 }

@@ -17,7 +17,7 @@ function FareInfo() {
       <div className="mt-32 mb-16  text-7xl text-white font-bold">
         요금 정보 입력하기
       </div>
-      <div className="pb-24 w-full ">
+      <div className="pb-24 w-full mb-48 ">
         <div className="flex justify-center gap-8 ">
           <div className="w-64">
             <img src={AddHourly} onClick={navigateHourly} alt="시간별" />
