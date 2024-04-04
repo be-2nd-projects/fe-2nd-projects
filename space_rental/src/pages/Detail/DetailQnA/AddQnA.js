@@ -2,11 +2,13 @@ import React from 'react';
 
 function AddQnA() {
   return (
-    <div>
-      <div>
+    <div className='modalContainer'>
+      <div className='modalWrap'>
         <div>
-          <input type='text' placeholder='문의 제목' />
+          <label htmlFor='qnaTitle'>문의제목</label>
+          <input type='text' id='qnaTitle' placeholder='문의 제목' />
         </div>
+
         <div>
           <textarea></textarea>
         </div>
