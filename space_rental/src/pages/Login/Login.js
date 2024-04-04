@@ -6,9 +6,31 @@ export default function Login() {
   const [pw, setPw] = useState("");
   const navigate = useNavigate();
 
-  const onClickConfirmButton = () => {
-    alert("로그인 되었습니다.");
-    navigate("/home");
+  const onClickConfirmButton = async () => {
+    if (!isInputValid()) {
+      alert("이메일과 비밀번호를 입력하세요.");
+      return;
+    }
+
+    try {
+      const response = await fetch("백엔드 API 주소", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email, password: pw }),
+      });
+
+      if (response.status === 200) {
+        alert("로그인 되었습니다.");
+        navigate("/home");
+      } else {
+        alert("로그인에 실패했습니다. 다시 시도해주세요.");
+      }
+    } catch (error) {
+      console.error("오류 발생:", error);
+      alert("서버와의 통신 중 오류가 발생했습니다.");
+    }
   };
 
   const navigateToSignup = () => {

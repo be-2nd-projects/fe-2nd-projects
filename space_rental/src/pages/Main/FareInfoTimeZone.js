@@ -17,7 +17,7 @@ function FareInfoTimeZone() {
             <div key={index} className="flex content-center items-center ">
               <input
                 type="text"
-                className="rounded-[28px] w-72 h-20 mr-8"
+                className="rounded-[28px] my-2 w-72 h-20 mr-8"
                 placeholder="낮타임"
                 value={input.dayTime}
                 onChange={(e) => {
@@ -49,13 +49,18 @@ function FareInfoTimeZone() {
             </div>
           ))}
           <button
-            className="flex justify-center mt-6  mx-auto pt-3 px-4 rounded-xl bg-[#23EAAE] font-medium"
+            className="flex justify-center mt-6  shadow-lg  mx-auto pt-3 px-4 rounded-xl bg-[#23EAAE] font-medium"
             onClick={addInput}
           >
             +
           </button>
         </div>
-      </div>{" "}
+      </div>
+      <div className="flex justify-center">
+        <button className="my-12 flex justify-center rounded-xl  mb-64 bg-[#FFFD82] font-bold text-4xl pt-4 px-3 pb-2 w-52">
+          작성완료
+        </button>
+      </div>
     </div>
   );
 }

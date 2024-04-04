@@ -63,7 +63,7 @@ function FareInfoHourly() {
             <Dropdown />
             <input
               type="text"
-              className="mx-4 pl-5 pt-2 rounded-[28px] w-[600px] h-20"
+              className="mx-4 pl-5 pt-2 my-2 rounded-[28px] w-[600px] h-20"
               placeholder="금액 입력"
               value={input.price}
               onChange={(e) => handlePriceChange(e, index)}
@@ -78,11 +78,16 @@ function FareInfoHourly() {
         ))}
       </div>
       <button
-        className="flex justify-center mt-6  mx-auto pt-3 px-4 rounded-xl bg-[#23EAAE] font-medium"
+        className="flex justify-center mt-6 shadow-lg  mx-auto pt-3 px-4 rounded-xl bg-[#23EAAE] font-medium"
         onClick={addInput}
       >
         +
       </button>
+      <div className="flex justify-center">
+        <button className="my-12 flex justify-center rounded-xl bg-[#FFFD82] font-bold text-4xl  mb-64 pt-4 px-3 pb-2 w-52">
+          작성완료
+        </button>
+      </div>
     </div>
   );
 }
