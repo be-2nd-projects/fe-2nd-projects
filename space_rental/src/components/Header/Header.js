@@ -8,7 +8,7 @@ import { FaKey } from "react-icons/fa";
 import { IoHome } from "react-icons/io5";
 
 const HeaderContainer = tw.header`
-  w-full 
+  w-full
   h-16
   bg-white
   shadow-md
