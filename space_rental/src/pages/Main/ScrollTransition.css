@@ -28,13 +28,11 @@ page {
 
 .searchBarBackground {
   background-image: url("../../assets/images/searchbar.png");
-  background-size: cover;
-  width: 100%;
-  height: auto;
+  background-size: 100% 100%;
+
   background-color: transparent;
   outline: none;
   color: black;
-  padding: 30px 35px 45px 40px;
 }
 
 .hidden-initially {
@@ -48,4 +46,8 @@ page {
   visibility: visible; /* 스크롤 시 보이게 합니다. */
   opacity: 1; /* 완전히 보이게 합니다. */
   height: auto; /* 내용에 맞게 높이를 조정합니다. */
+}
+
+.whereshadow {
+  box-shadow: 6px 17px 4px 9px rgba(0, 0, 0, 0.25);
 }

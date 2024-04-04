@@ -9,7 +9,7 @@ import Home2 from "./Home2";
 import Home3 from "./Home3";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
-import Reservation from "../Reservation/Reservation";
+import "./Home.css";
 
 const Home = () => {
   const [showNextPage, setShowNextPage] = useState(false);
@@ -67,6 +67,13 @@ const Home = () => {
     }
   };
 
+  const handleImageClick = () => {
+    if (firstSearchText.trim() !== "") {
+      setShowQuestionPage(2);
+      setShowNextPage(true); // 첫 번째 질문에서 이미지를 클릭하면 다음 페이지로 이동하도록 설정
+    }
+  };
+
   const handleSecondSearchInputChange = (event) => {
     setSecondSearchText(event.target.value);
   };
@@ -90,7 +97,7 @@ const Home = () => {
   return (
     <div
       className={`page ${showNextPage ? "show-next-page" : ""}
-      wrap max-w-6xl mx-auto my-0  `}
+        wrap max-w-6xl mx-auto  my-0  `}
     >
       {/* 현재 페이지 컨텐츠 (1P) */}
       <div
@@ -113,6 +120,7 @@ const Home = () => {
           firstSearchText={firstSearchText}
           onSearchTextChange={handleFirstSearchInputChange}
           onSearchKeyDown={handleFirstSearchInputKeyDown}
+          handleImageClick={handleImageClick}
         />
       </div>
 

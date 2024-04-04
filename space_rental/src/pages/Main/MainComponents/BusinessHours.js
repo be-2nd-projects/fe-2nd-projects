@@ -68,7 +68,7 @@ function BusinessHours() {
   return (
     <div className="wrap max-w-6xl mx-auto my-0 flex flex-col text-5xl">
       <div className="pb-24 w-full">
-        <div className="font-light">운영시간을 선택해 주세요</div>
+        <div className="font-light pb-4">운영시간을 선택해 주세요</div>
         {daysOfWeek.map((day) => (
           <div key={day} className="flex items-center mb-3">
             <div className="r w-40 mr-2">{day}</div>

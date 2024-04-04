@@ -84,9 +84,9 @@ function FareInfoHourly() {
         +
       </button>
       <div className="flex justify-center">
-        <div className="my-12 flex justify-center rounded-xl bg-white text-4xl pt-4 px-3 pb-2 w-52">
+        <button className="my-12 flex justify-center rounded-xl bg-[#FFFD82] font-bold text-4xl  mb-64 pt-4 px-3 pb-2 w-52">
           작성완료
-        </div>
+        </button>
       </div>
     </div>
   );

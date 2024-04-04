@@ -21,7 +21,7 @@ export default function Home4({
 
   return (
     <>
-      <div className="pt-[110px] text-7xl font-bold text-white">
+      <div className="w-full pt-28 text-7xl font-bold text-white">
         <div onClick={goToPrevQuestionPage} className="icon-back">
           <BiSolidLeftArrow
             className="w-6 h-6 mb-12 "
@@ -30,9 +30,9 @@ export default function Home4({
         </div>
         <div className="text-6xl mb-2">언제 가실 건가요?</div>
       </div>
-      <div className="relative flex justify-center items-center mt-4">
+      <div className="relative flex justify-center items-center mt-4 ">
         <img src={SearchBar} alt="Calendar" className="w-screen" />
-        <div className="flex absolute pb-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-5xl font-bold pb-3">
+        <div className="flex absolute pb-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-5xl font-bold pb-3 ">
           <div className="pt-2">
             {dayjs(selectedDate).format("YYYY년 MM월 DD일")}
           </div>
@@ -46,7 +46,7 @@ export default function Home4({
           </button>
         </div>
       </div>
-      <div className="flex justify-center ">
+      <div className="flex justify-center mb-60 ">
         <CustomCalendar onDateChange={setSelectedDate} />
       </div>
     </>
