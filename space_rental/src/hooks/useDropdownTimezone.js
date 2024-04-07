@@ -11,7 +11,7 @@ const customStyles = {
     ...provided,
     borderRadius: "20px",
     height: "100px",
-    width: "200px",
+    width: "170px",
     paddingLeft: "10px",
     paddingTop: "10px",
   }),

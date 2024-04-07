@@ -63,7 +63,7 @@ function FareInfoHourly() {
             <Dropdown />
             <input
               type="text"
-              className="mx-4 pl-5 pt-2 my-2 rounded-[28px] w-[600px] h-20"
+              className="mx-4 pl-5 h-[100px] pt-2 my-2 rounded-[28px] w-[600px] h-20"
               placeholder="금액 입력"
               value={input.price}
               onChange={(e) => handlePriceChange(e, index)}
