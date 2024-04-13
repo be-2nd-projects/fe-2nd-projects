@@ -62,12 +62,10 @@ function PlaceRegister() {
     { label: "주차가능", name: "parking" },
     { label: "반려동물 동반가능", name: "petsAllowed" },
     { label: "유아 출입 불가", name: "noChildren" },
-    { label: "금연", name: "nonSmoking" },
+    { label: "흡연가능", name: "Smoking" },
     { label: "음식물 반입 가능", name: "foodAllowed" },
     { label: "주류 반입 가능", name: "alcoholAllowed" },
-    { label: "샤워실 완비", name: "showerAvailable" },
     { label: "24시 운영", name: "operational24h" },
-    { label: "대형 스크린", name: "largeScreen" },
   ];
 
   return (
